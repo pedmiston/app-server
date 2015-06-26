@@ -1,0 +1,6 @@
+---
+
+db_password: "soundscapes"
+
+django_settings_file: "settings.dev"
+django_secret_key: "soundscapesevoapps"

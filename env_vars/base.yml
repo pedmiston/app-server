@@ -1,0 +1,13 @@
+---
+project_name: soundscapes-app
+application_name: soundscapes
+
+git_repo: git@github.com:evoapps/soundscapes.git
+
+db_user: "{{ application_name }}"
+db_name: "{{ application_name }}"
+
+gunicorn_num_workers: 3
+gunicorn_max_requests: 0
+
+nginx_server_name: "{{ inventory_hostname }}"
