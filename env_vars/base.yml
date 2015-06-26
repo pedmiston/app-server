@@ -2,7 +2,7 @@
 project_name: soundscapes-app
 application_name: soundscapes
 
-git_repo: git@github.com:evoapps/soundscapes.git
+git_repo: https://github.com/evoapps/soundscapes.git
 
 db_user: "{{ application_name }}"
 db_name: "{{ application_name }}"
