@@ -69,7 +69,7 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "ansible" do |ansible|
-		ansible.playbook = "dev.yaml"
+		ansible.playbook = "dev.yml"
 		ansible.host_key_checking = false
 		ansible.verbose = "v"
 	end
