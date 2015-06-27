@@ -1,5 +1,10 @@
 ---
 
+
+- name: Create the virtualenv
+  command: virtualenv {{ virtualenv_path }} --system-site-packages
+           creates={{ virtualenv_path }}/bin/activate
+
 - name: Ensure gunicorn is installed
   pip: name=gunicorn virtualenv={{ virtualenv_path }} virtualenv_site_packages=yes
 
