@@ -1,7 +1,10 @@
 ---
 
 - name: Install required packages
-  pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
+  pip: requirements={{ requirements_file }}  virtualenv={{ virtualenv_path }} virtualenv_site_packages=yes
+
+- name: Install additional required packages
+  easy_install: name=feedparser virtualenv={{ virtualenv_path }}
 
 - name: Run Django database migrations
   django_manage:

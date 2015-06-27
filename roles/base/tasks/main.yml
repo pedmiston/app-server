@@ -15,8 +15,10 @@
     - ntp
     - htop
     - git
+    - libpq-dev
     - python-dev
     - python-pip
+    - python-pycurl
     - supervisor
 
 - name: Install virtualenv
