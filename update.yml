@@ -1,0 +1,32 @@
+---
+
+- name: Update the shows on the server
+  hosts: soundscapes
+  sudo: yes
+  sudo_user: root
+  remote_user: root
+  vars_files:
+    - env_vars/base.yml
+    - env_vars/prod.yml
+  tasks:
+    - name: Refresh show feeds
+      django_manage:
+        command: refresh
+        app_path: "{{ project_path }}"
+        virtualenv: "{{ virtualenv_path }}"
+        settings: "{{ django_settings_file }}"
+      environment: django_environment
+    - name: Download missing episodes
+      django_manage:
+        command: download
+        app_path: "{{ project_path }}"
+        virtualenv: "{{ virtualenv_path }}"
+        settings: "{{ django_settings_file }}"
+      environment: django_environment
+    - name: Analyze episode files
+      django_manage:
+        command: analyze
+        app_path: "{{ project_path }}"
+        virtualenv: "{{ virtualenv_path }}"
+        settings: "{{ django_settings_file }}"
+      environment: django_environment
