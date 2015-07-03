@@ -1,2 +1,11 @@
-.vagrant/
+# OS files
 .DS_Store
+
+# Virtual server deployment
+.vagrant/
+
+# Server directories
+/media/
+/static/
+/analyses/
+/downloads/
