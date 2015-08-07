@@ -1,4 +1,5 @@
 ---
+install_from_github: True
 
 db_password: "soundscapes"
 
