@@ -18,3 +18,10 @@
     virtualenv: "{{ virtualenv_path }}"
     settings: "{{ django_settings_file }}"
   environment: django_environment
+
+- name: Create media and download directories
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ virtualenv_path }}/media/"
+    - "{{ virtualenv_path }}/downloads/"
+    - "{{ virtualenv_path }}/analyses/"
